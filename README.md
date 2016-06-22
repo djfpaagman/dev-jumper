@@ -1,7 +1,10 @@
 # Dev Jumper
-A really small Chrome extension that allows you to move switch between live and development environments via a keyboard shortcut.
+A really small Chrome extension that allows you to switch between live and development environments via a keyboard shortcut.
 
-Not yet available in the Chrome store.
+Not yet available in the Chrome store. A few things need be fixed first:
+
+* Making dev port configurable
+* Adding icons and screenshots etc for the Chrome store
 
 ## Contributing
 1. Fork it
