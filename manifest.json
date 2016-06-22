@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Dev Jumper",
+  "short_name": "Dev Jumper",
+  "description": "Jump to and from your local development environment",
+  "version": "0.1",
+  "author": "Dennis Paagman",
+
+  "background": {
+    "scripts": ["jump.js"]
+  },
+
+  "permissions": [
+    "tabs"
+  ],
+
+  "commands": {
+    "jump-to-from-dev": {
+      "suggested_key": {
+        "default": "Ctrl+D",
+        "mac": "Ctrl+D"
+      },
+      "description": "Jump to or from development environment"
+    }
+  }
+}
