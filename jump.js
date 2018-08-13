@@ -1,3 +1,6 @@
+const TLD = ".test"
+const TLD_LENGTH = TLD.length
+
 chrome.commands.onCommand.addListener(function(command) {
   if (command === "jump-to-from-dev") {
     jumpToOrFromDev();
@@ -11,12 +14,12 @@ function jumpToOrFromDev() {
 
     if (isDevEnv(url.hostname)) {
       // Switch to production
-      url.hostname = url.hostname.slice(0, -4);
+      url.hostname = url.hostname.slice(0, -TLD_LENGTH);
       url.protocol = "https:";
       url.port = "443";
     } else {
       // Switch to development
-      url.hostname = url.hostname.concat(".dev");
+      url.hostname = url.hostname.concat(TLD);
       url.protocol = "http:";
       url.port = "3000";
     }
@@ -36,6 +39,6 @@ function parseUrl(url) {
 }
 
 function isDevEnv(hostname) {
-  // A hostname is consider the dev environment when it ends with .dev
-  return (hostname.slice(-4) === ".dev")
+  // A hostname is consider the dev environment when it ends with the configured TLD
+  return (hostname.slice(-TLD_LENGTH) === TLD)
 }
